@@ -6,6 +6,7 @@ GestionareCompetitie::GestionareCompetitie(QWidget *parent) :
     ui(new Ui::GestionareCompetitie)
 {
     ui->setupUi(this);
+
 }
 
 GestionareCompetitie::~GestionareCompetitie()
@@ -13,10 +14,19 @@ GestionareCompetitie::~GestionareCompetitie()
     delete ui;
 }
 
+
+
 void GestionareCompetitie::on_b_adauga_clicked()
 {
 
         ap = new adaugare_participant();
         this->hide();
         ap->show();
+}
+
+void GestionareCompetitie::on_b_addclub_clicked()
+{
+    ac = new adaugare_club();
+    this->hide();
+    ac->show();
 }

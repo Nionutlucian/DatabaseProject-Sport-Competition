@@ -10,9 +10,9 @@
 #include <QItemSelectionModel>
 #include <QDebug>
 #include "gestionarecompetitie.h"
+#include"adaugare_participant.h"
 
 static QSqlDatabase m_db;
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     else
     {
-        ui->statusBar->showMessage(tr("Database connected!"));
+        ui->statusBar->showMessage(tr("Database connected!")+ m_db.databaseName()) ;
     }
    }
 

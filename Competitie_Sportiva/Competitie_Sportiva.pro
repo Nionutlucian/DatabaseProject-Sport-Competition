@@ -29,16 +29,19 @@ SOURCES += \
     adaugare_participant.cpp \
     participant.cpp \
     participantdao.cpp \
-    gestionarecompetitie.cpp
+    gestionarecompetitie.cpp \
+    adaugare_club.cpp
 
 HEADERS += \
         mainwindow.h \
     adaugare_participant.h \
     participant.h \
     participantdao.h \
-    gestionarecompetitie.h
+    gestionarecompetitie.h \
+    adaugare_club.h
 
 FORMS += \
         mainwindow.ui \
     adaugare_participant.ui \
-    gestionarecompetitie.ui
+    gestionarecompetitie.ui \
+    adaugare_club.ui

@@ -17,8 +17,6 @@ public:
     ~adaugare_participant();
 
 private slots:
-
-
     void on_b_adauga_clicked();
 
 private:

@@ -10,10 +10,10 @@ class participantDao
 {
 public:
     participantDao();
-    void addParticipant(Participant& p);
+    bool addParticipant(Participant p);
     std::vector<Participant> getParticipanti();
 private:
-    MainWindow* mw;
+    MainWindow *mw;
     QSqlDatabase m_db;
 };
 
