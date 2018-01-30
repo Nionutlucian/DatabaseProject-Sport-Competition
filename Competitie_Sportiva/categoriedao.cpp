@@ -21,3 +21,5 @@ bool categoriedao::addCategorie(categorie c)
     query.bindValue(":sex_participant",c.getSexParticipant());
     return query.exec();
 }
+
+

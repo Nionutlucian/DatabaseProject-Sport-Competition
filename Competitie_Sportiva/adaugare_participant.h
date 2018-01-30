@@ -19,6 +19,8 @@ public:
 private slots:
     void on_b_adauga_clicked();
 
+    void on_b_categorie_clicked();
+
 private:
     Ui::adaugare_participant *ui;
     participantDao *pd;

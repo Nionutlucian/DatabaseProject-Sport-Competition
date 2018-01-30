@@ -16,7 +16,7 @@ bool participantDao::addParticipant(Participant participant)
             // QString x = mw->getDataBase().databaseName();
              //std::cout << x.toStdString() << std::endl;
                 QSqlQuery query(mw->getDataBase());
-                query.prepare("INSERT INTO participant values(:id_participant, :nume_participant, :prenume_participant, :varsta_participant, :greutate_participant, :tara_participant, :gen_participant, :CNP, :nume_club)");
+                query.prepare("INSERT INTO participant values(:id_participant, :nume_participant, :prenume_participant, :varsta_participant, :greutate_participant, :tara_participant, :gen_participant, :CNP, :nume_club, :categorie)");
                 query.bindValue(":id_participant", participant.getID());
                 query.bindValue(":nume_participant", participant.getNume());
                 query.bindValue(":prenume_participant", participant.getPrenume());
@@ -26,6 +26,7 @@ bool participantDao::addParticipant(Participant participant)
                 query.bindValue(":gen_participant", participant.getGen());
                 query.bindValue(":CNP", participant.getCnp());
                 query.bindValue(":nume_club", participant.getClub());
+                query.bindValue(":categorie",participant.getCategorie());
                 return query.exec();
 }
 
@@ -45,6 +46,24 @@ std::vector<QString>participantDao::selectClubSportiv()
                      list.push_back(denumire);
                      i++;
                  }
+                return list;
+}
+
+ std::vector<QString> participantDao::gasesteCategorie(int varsta,int greutate,QString sex)
+{
+
+    QSqlQuery query(mw->getDataBase());
+    query.prepare("SELECT nume_categorie FROM categorie WHERE varsta_minima <=:varsta AND varsta_maxima >=:varsta AND sex_participant =:sex AND greutate_minima <=:greutate AND greutate_maxima >=:greutate");
+    query.bindValue(":varsta",varsta);
+    query.bindValue(":greutate",greutate);
+    query.bindValue(":sex",sex);
+    query.exec();
+    std::vector<QString> list;
+    int i = 0;
+    while(query.next()) {
+
+               list.push_back(query.value(i).toString());
+          }
     return list;
 }
 

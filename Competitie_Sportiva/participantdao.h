@@ -12,6 +12,7 @@ public:
     participantDao();
     bool addParticipant(Participant p);
     std::vector<QString> selectClubSportiv();
+    std::vector<QString> gasesteCategorie(int varsta,int greutate,QString sex);
 private:
     MainWindow *mw;
     QSqlDatabase m_db;

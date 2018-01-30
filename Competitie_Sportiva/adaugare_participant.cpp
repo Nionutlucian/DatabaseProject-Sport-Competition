@@ -30,7 +30,8 @@ void adaugare_participant::on_b_adauga_clicked()
            int varsta = ui->varsta->toPlainText().toInt();
            int greutate = ui->greutate->toPlainText().toInt();
            QString nume_club = ui->select_clubsportiv->currentText();
-           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp,nume_club);
+           QString categorie = ui->categorie->currentText();
+           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp,nume_club,categorie);
            if(pd->addParticipant(participant)==true){
                ui->succes->setText("Participantul a fost adaugat cu succes!");
            }
@@ -48,5 +49,23 @@ void adaugare_participant::on_b_adauga_clicked()
 //                text = text + listParticipanti[i].getNume() + "/n";
 //                ui->afisare_participanti->setText(text);
 //          }
+
+}
+
+void adaugare_participant::on_b_categorie_clicked()
+{
+
+    int varsta = ui->varsta->toPlainText().toInt();
+    int greutate = ui->greutate->toPlainText().toInt();
+    QString sex = ui->gen->toPlainText();
+//    if(pd->addParticipant(participant)==true){
+//        ui->succes->setText("Participantul a fost adaugat cu succes!");
+//    }
+//    else{
+//        ui->succes->setText("A aparut o eroare!");
+//    }
+    for(int i = 0;i<pd->gasesteCategorie(varsta,greutate,sex).size();i++){
+    ui->categorie->insertItem(i,pd->gasesteCategorie(varsta,greutate,sex)[i]);
+    }
 
 }
