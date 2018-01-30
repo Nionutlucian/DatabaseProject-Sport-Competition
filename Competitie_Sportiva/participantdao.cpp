@@ -1,9 +1,9 @@
-#include "participantdao.h"
+#include"participantdao.h"
 #include "participant.h"
 #include <iostream>
 #include <QDebug>
 #include <QSqlDatabase>
-#include"mainwindow.h"
+//#include"mainwindow.h"
 #include<vector>
 
 participantDao::participantDao()
@@ -86,26 +86,33 @@ std::vector<QString>participantDao::selectClubSportiv()
 //}
 
 
-//std::vector<Participant> participantDao::getParticipanti()
-//{
-//       QSqlQuery query(mw->getDataBase());
-//       query.prepare("SELECT * FROM participant");
-//       query.exec();
+std::vector<Participant> participantDao::getParticipanti()
+{
+       QSqlQuery query(mw->getDataBase());
+       query.prepare("SELECT * FROM participant");
+       query.exec();
 
-//       std::vector<Participant> list;
-//       while(query.next()) {
+       std::vector<Participant> list;
+       while(query.next()) {
+           int id = query.value("punctaj").toInt();
+           QString nume = query.value("nume_participant").toString();
+           QString prenume = query.value("prenume_participant").toString();
+           QString tara = query.value("tara_participant").toString();
+           QString gen = query.value("gen_participant").toString();
+           int varsta = query.value("varsta_participant").toInt();
+           int greutate = query.value("greutate_participant").toInt();
+           QString cnp = query.value("CNP").toString();
+           QString nume_club = query.value("nume_club").toString();
+           QString categorie = query.value("categorie").toString();
+           int punctaj = query.value("punctaj").toInt();
 
-//           int id = query.value("id_participant").toInt();
-//           QString nume = query.value("nume_participant").toString();
-//           QString prenume = query.value("prenume_participanti").toString();
-//           QString tara = query.value("tara_participant").toString();
-//           QString gen = query.value("gen_participant").toString();
-//           int varsta = query.value("varsta_participant").toInt();
-//           int greutate = query.value("greutate_participant").toInt();
+           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp,nume_club,categorie,punctaj);
+            list.push_back(participant);
+       }
 
-//           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,);
-//            list.push_back(participant);
-//       }
+       return list;
+}
 
-//       return list;
-//}
+
+
+

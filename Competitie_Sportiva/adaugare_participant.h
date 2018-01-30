@@ -4,6 +4,7 @@
 #include <QDialog>
 #include<QString>
 #include "participantdao.h"
+#include "mainwindow.h"
 namespace Ui {
 class adaugare_participant;
 }
@@ -21,9 +22,13 @@ private slots:
 
     void on_b_categorie_clicked();
 
+    void on_b_inapoi_clicked();
+
 private:
     Ui::adaugare_participant *ui;
     participantDao *pd;
+    MainWindow *mw;
+
 };
 
 #endif // ADAUGARE_PARTICIPANT_H

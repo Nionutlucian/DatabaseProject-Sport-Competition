@@ -13,6 +13,8 @@ public:
     bool addParticipant(Participant p);
     std::vector<QString> selectClubSportiv();
     std::vector<QString> gasesteCategorie(int varsta,int greutate,QString sex);
+    std::vector<Participant> getParticipanti();
+
 private:
     MainWindow *mw;
     QSqlDatabase m_db;

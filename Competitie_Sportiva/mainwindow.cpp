@@ -10,7 +10,8 @@
 #include <QItemSelectionModel>
 #include <QDebug>
 #include "gestionarecompetitie.h"
-#include"adaugare_participant.h"
+//#include "adaugare_participant.h"
+
 
 static QSqlDatabase m_db;
 MainWindow::MainWindow(QWidget *parent) :
@@ -74,3 +75,5 @@ void MainWindow::on_b_gestionare_clicked()
         g.setModal(true);
         g.exec();
 }
+
+

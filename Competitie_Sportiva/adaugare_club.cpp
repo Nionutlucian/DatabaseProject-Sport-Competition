@@ -27,3 +27,10 @@ void adaugare_club::on_pushButton_clicked()
         ui->succes->setText("A aparut o eroare!");
     }
 }
+
+void adaugare_club::on_b_inapoi_clicked()
+{
+    mw = new MainWindow();
+    this->hide();
+    mw->show();
+}

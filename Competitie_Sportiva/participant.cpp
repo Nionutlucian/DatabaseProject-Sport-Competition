@@ -5,7 +5,7 @@ Participant::Participant()
 
 }
 
-Participant::Participant(int id, QString nume, QString prenume, QString tara, int greutate, int varsta, QString gen,QString cnp,QString nume_club,QString categorie)
+Participant::Participant(int id, QString nume, QString prenume, QString tara, int greutate, int varsta, QString gen,QString cnp,QString nume_club,QString categorie,int punctaj)
 {
     this->id = id;
     this->nume = nume;
@@ -17,6 +17,11 @@ Participant::Participant(int id, QString nume, QString prenume, QString tara, in
     this->cnp = cnp;
     this->nume_club = nume_club;
     this->categorie = categorie;
+    this->punctaj = punctaj;
+}
+
+int Participant::getPunctaj(){
+    return this->punctaj;
 }
 
 QString Participant::getCategorie(){

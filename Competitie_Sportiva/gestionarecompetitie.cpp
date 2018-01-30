@@ -37,3 +37,10 @@ void GestionareCompetitie::on_b_addcat_clicked()
     this->hide();
     acat->show();
 }
+
+void GestionareCompetitie::on_b_clasamente_clicked()
+{
+    clas  = new clasament();
+    this->hide();
+    clas->show();
+}

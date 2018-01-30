@@ -35,7 +35,9 @@ SOURCES += \
     clubsportiv.cpp \
     adaugare_categorie.cpp \
     categorie.cpp \
-    categoriedao.cpp
+    categoriedao.cpp \
+    clasament.cpp \
+    simulare_window.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,11 +50,15 @@ HEADERS += \
     clubsportiv.h \
     adaugare_categorie.h \
     categorie.h \
-    categoriedao.h
+    categoriedao.h \
+    clasament.h \
+    simulare_window.h
 
 FORMS += \
         mainwindow.ui \
     adaugare_participant.ui \
     gestionarecompetitie.ui \
     adaugare_club.ui \
-    adaugare_categorie.ui
+    adaugare_categorie.ui \
+    clasament.ui \
+    simulare_window.ui

@@ -5,6 +5,7 @@
 #include <adaugare_participant.h>
 #include <adaugare_club.h>
 #include <adaugare_categorie.h>
+#include "clasament.h"
 
 namespace Ui {
 class GestionareCompetitie;
@@ -24,11 +25,14 @@ private slots:
 
     void on_b_addcat_clicked();
 
+    void on_b_clasamente_clicked();
+
 private:
     Ui::GestionareCompetitie *ui;
     adaugare_participant *ap;
     adaugare_club *ac;
     adaugare_categorie *acat;
+    clasament *clas;
 
 };
 

@@ -358,6 +358,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="b_inapoi">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>410</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Inapoi</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

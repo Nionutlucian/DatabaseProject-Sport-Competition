@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include"clubsportivdao.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class adaugare_club;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_b_inapoi_clicked();
+
 private:
     Ui::adaugare_club *ui;
     clubsportivdao *cs;
+    MainWindow *mw;
 };
 
 #endif // ADAUGARE_CLUB_H

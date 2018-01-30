@@ -2,6 +2,7 @@
 #include "ui_adaugare_participant.h"
 #include "participant.h"
 #include <vector>
+
 adaugare_participant::adaugare_participant(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::adaugare_participant)
@@ -10,6 +11,7 @@ adaugare_participant::adaugare_participant(QWidget *parent) :
     for(int i=0;i<pd->selectClubSportiv().size();i++){
     ui->select_clubsportiv->insertItem(i,pd->selectClubSportiv()[i]);
     }
+
 }
 
 adaugare_participant::~adaugare_participant()
@@ -31,7 +33,7 @@ void adaugare_participant::on_b_adauga_clicked()
            int greutate = ui->greutate->toPlainText().toInt();
            QString nume_club = ui->select_clubsportiv->currentText();
            QString categorie = ui->categorie->currentText();
-           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp,nume_club,categorie);
+           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp,nume_club,categorie,0);
            if(pd->addParticipant(participant)==true){
                ui->succes->setText("Participantul a fost adaugat cu succes!");
            }
@@ -68,4 +70,11 @@ void adaugare_participant::on_b_categorie_clicked()
     ui->categorie->insertItem(i,pd->gasesteCategorie(varsta,greutate,sex)[i]);
     }
 
+}
+
+void adaugare_participant::on_b_inapoi_clicked()
+{
+    mw = new MainWindow();
+    this->hide();
+    mw->show();
 }

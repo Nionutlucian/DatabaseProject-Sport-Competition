@@ -31,3 +31,10 @@ void adaugare_categorie::on_b_adaugacategorie_clicked()
         ui->succes->setText("A aparut o eroare!");
     }
 }
+
+void adaugare_categorie::on_pushButton_clicked()
+{
+    mw = new MainWindow();
+    this->hide();
+    mw->show();
+}

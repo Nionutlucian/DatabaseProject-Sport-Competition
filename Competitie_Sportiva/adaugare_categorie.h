@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include"categoriedao.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class adaugare_categorie;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_b_adaugacategorie_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::adaugare_categorie *ui;
     categoriedao *cat;
+    MainWindow *mw;
 };
 
 #endif // ADAUGARE_CATEGORIE_H

@@ -28,8 +28,11 @@ private slots:
 
     void on_b_gestionare_clicked();
 
+    //void on_b_competitie_clicked();
+
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H
