@@ -2,6 +2,7 @@
 #define ADAUGARE_CLUB_H
 
 #include <QDialog>
+#include"clubsportivdao.h"
 
 namespace Ui {
 class adaugare_club;
@@ -15,8 +16,12 @@ public:
     explicit adaugare_club(QWidget *parent = 0);
     ~adaugare_club();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::adaugare_club *ui;
+    clubsportivdao *cs;
 };
 
 #endif // ADAUGARE_CLUB_H

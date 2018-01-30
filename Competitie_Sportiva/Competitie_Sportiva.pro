@@ -30,7 +30,9 @@ SOURCES += \
     participant.cpp \
     participantdao.cpp \
     gestionarecompetitie.cpp \
-    adaugare_club.cpp
+    adaugare_club.cpp \
+    clubsportivdao.cpp \
+    clubsportiv.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +40,9 @@ HEADERS += \
     participant.h \
     participantdao.h \
     gestionarecompetitie.h \
-    adaugare_club.h
+    adaugare_club.h \
+    clubsportivdao.h \
+    clubsportiv.h
 
 FORMS += \
         mainwindow.ui \

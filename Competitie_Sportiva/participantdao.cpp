@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QSqlDatabase>
 #include"mainwindow.h"
+#include<vector>
 
 participantDao::participantDao()
 {
@@ -15,7 +16,7 @@ bool participantDao::addParticipant(Participant participant)
             // QString x = mw->getDataBase().databaseName();
              //std::cout << x.toStdString() << std::endl;
                 QSqlQuery query(mw->getDataBase());
-                query.prepare("INSERT INTO participant values(:id_participant, :nume_participant, :prenume_participant, :varsta_participant, :greutate_participant, :tara_participant, :gen_participant,:CNP)");
+                query.prepare("INSERT INTO participant values(:id_participant, :nume_participant, :prenume_participant, :varsta_participant, :greutate_participant, :tara_participant, :gen_participant, :CNP, :nume_club)");
                 query.bindValue(":id_participant", participant.getID());
                 query.bindValue(":nume_participant", participant.getNume());
                 query.bindValue(":prenume_participant", participant.getPrenume());
@@ -24,8 +25,29 @@ bool participantDao::addParticipant(Participant participant)
                 query.bindValue(":greutate_participant", participant.getGreutate());
                 query.bindValue(":gen_participant", participant.getGen());
                 query.bindValue(":CNP", participant.getCnp());
+                query.bindValue(":nume_club", participant.getClub());
                 return query.exec();
 }
+
+
+
+std::vector<QString>participantDao::selectClubSportiv()
+{
+            // QString x = mw->getDataBase().databaseName();
+             //std::cout << x.toStdString() << std::endl;
+                QSqlQuery query(mw->getDataBase());
+                query.prepare("SELECT denumire FROM club_sportiv");
+                query.exec();
+                std::vector<QString> list;
+                int i = 0;
+                while(query.next()){
+                     QString denumire = query.value(i).toString();
+                     list.push_back(denumire);
+                     i++;
+                 }
+    return list;
+}
+
 
 //bool participantDao::exist(Participant participant)
 //{

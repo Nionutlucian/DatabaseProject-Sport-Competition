@@ -7,6 +7,9 @@ adaugare_participant::adaugare_participant(QWidget *parent) :
     ui(new Ui::adaugare_participant)
 {
     ui->setupUi(this);
+    for(int i=0;i<pd->selectClubSportiv().size();i++){
+    ui->select_clubsportiv->insertItem(i,pd->selectClubSportiv()[i]);
+    }
 }
 
 adaugare_participant::~adaugare_participant()
@@ -26,7 +29,8 @@ void adaugare_participant::on_b_adauga_clicked()
            int id = ui->id->toPlainText().toInt();
            int varsta = ui->varsta->toPlainText().toInt();
            int greutate = ui->greutate->toPlainText().toInt();
-           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp);
+           QString nume_club = ui->select_clubsportiv->currentText();
+           Participant participant(id, nume, prenume,tara, greutate,varsta, gen,cnp,nume_club);
            if(pd->addParticipant(participant)==true){
                ui->succes->setText("Participantul a fost adaugat cu succes!");
            }

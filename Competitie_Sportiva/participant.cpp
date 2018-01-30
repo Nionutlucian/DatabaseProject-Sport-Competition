@@ -5,7 +5,7 @@ Participant::Participant()
 
 }
 
-Participant::Participant(int id, QString nume, QString prenume, QString tara, int greutate, int varsta, QString gen,QString cnp)
+Participant::Participant(int id, QString nume, QString prenume, QString tara, int greutate, int varsta, QString gen,QString cnp,QString nume_club)
 {
     this->id = id;
     this->nume = nume;
@@ -15,6 +15,11 @@ Participant::Participant(int id, QString nume, QString prenume, QString tara, in
     this->varsta = varsta;
     this->gen = gen;
     this->cnp = cnp;
+    this->nume_club = nume_club;
+}
+
+QString Participant::getClub(){
+    return this->nume_club;
 }
 
 int Participant::getID(){

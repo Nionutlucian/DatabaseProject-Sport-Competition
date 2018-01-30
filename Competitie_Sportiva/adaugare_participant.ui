@@ -251,10 +251,10 @@
   <widget class="QTextEdit" name="id">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>170</y>
-     <width>104</width>
-     <height>71</height>
+     <x>510</x>
+     <y>120</y>
+     <width>211</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
@@ -269,6 +269,52 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="select_clubsportiv">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>40</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>40</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Club sportiv:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>125</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Numar participare:</string>
    </property>
   </widget>
  </widget>

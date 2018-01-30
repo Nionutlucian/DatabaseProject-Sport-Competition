@@ -11,7 +11,7 @@ class participantDao
 public:
     participantDao();
     bool addParticipant(Participant p);
-    std::vector<Participant> getParticipanti();
+    std::vector<QString> selectClubSportiv();
 private:
     MainWindow *mw;
     QSqlDatabase m_db;
