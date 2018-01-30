@@ -30,3 +30,10 @@ void GestionareCompetitie::on_b_addclub_clicked()
     this->hide();
     ac->show();
 }
+
+void GestionareCompetitie::on_b_addcat_clicked()
+{
+    acat = new adaugare_categorie();
+    this->hide();
+    acat->show();
+}
